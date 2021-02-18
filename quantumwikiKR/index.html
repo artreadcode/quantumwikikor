@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+    maximum-scale=1, user-scalable=0" />
+    <title>양자 컴퓨팅 백서 &#8212; Quantum Computing 101</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.4eb26a98c046fa117c2b75e31c15adbb.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="https://assets.readthedocs.org/static/css/badge_only.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3edd59071b60732de7f5.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script async="async" src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="시작하기" href="introduction.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  
+<!-- RTD Extra Head -->
+
+<!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+-->
+<link rel="canonical" href="https://mybinder.readthedocs.io/en/latest/" />
+
+<link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css" />
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2020-11-27T08:51:33Z", "builder": "sphinx", "canonical_url": "https://mybinder.readthedocs.io/en/latest/", "commit": "a913cd88", "docroot": "/doc/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "index", "programming_language": "words", "project": "mybinder", "proxied_api_host": "/_", "source_suffix": ".md", "subprojects": {}, "theme": "pydata_sphinx_theme", "user_analytics_code": "UA-101904940-3", "version": "latest"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+<script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+</head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" 
+    id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="#">
+    
+      <img src="_static/logo.png" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" 
+    data-toggle="collapse" data-target="#navbar-menu" 
+    aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="introduction.html">시작하기</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="using/index.html">양자 컴퓨팅 배우기</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="reference.html">더 나아가기</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="contribute.html">이 프로젝트에 기여한 사람들</a>
+        </li>
+        
+        
+      </ul>
+
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/kyoilkim/KOQW" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" 
+  placeholder="문서 검색하기" aria-label="문서 검색하기" 
+  autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+
+              
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="quantumwikikor-documentation">
+<span id="binder-docs"></span><h1>양자 컴퓨팅 백서<a class="headerlink" href="#binder-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="badges docutils">
+<p><a class="reference external" href="https://join.slack.com/share/zt-mosqunn5-freFo1SYixXb7CcSmbWf2A"><img alt="Qiskit 한국어 사용자 공식 모임에 초대합니다! https://discourse.jupyter.org" 
+  src="https://img.shields.io/badge/Slack-Qiskit%20한국어%20사용자%20모임-yellow" /></a></p>
+</div>
+<br />
+<p><strong>양자 컴퓨팅 백서</strong> 는 한국어 사용자에, 한국어 사용자에 의한, 한국어 사용자를 위한 양자 컴퓨팅 튜토리얼입니다. 
+이 프로젝트는 <a class="reference external" href="https://www.hackerearth.com/challenges/hackathon/qiskit-hackathon-korea/">Qiskit 한국 해커톤</a>에서의 아이디어가
+현실로 옮겨진 결과물입니다. 
+IBM의 <strong> Qiskit </strong> 오픈소스 라이브러리를 바탕으로
+전 세계적으로 떠오르는 기술인 양자 컴퓨팅(Quantum computing)에 대한 안내, Qiskit[키-스킷] 사용법, 그리고 바로 적용해 볼 수 있는 응용을 설명하고자 합니다.</p>
+<div class="tip admonition">
+<p class="admonition-title"> Other documentation in the Binder ecosystem</p>
+<p>This documentation is for creators of Binder repositories, and those who wish to use
+and learn more about the service at <code class="docutils literal notranslate"><span class="pre">mybinder.org</span></code>. You may be interested in the following
+other documentation sites:</p>
+<dl class="simple myst">
+<dt>👉 <a class="reference external" href="https://binderhub.readthedocs.io">
+  the BinderHub documentation</a></dt><dd><p>Has information about deploying your own BinderHub in the cloud. It is meant for people that wish to replicate the <code class="docutils literal notranslate"><span class="pre">mybinder.org</span></code> service at a different location for their community.</p>
+</dd>
+<dt>👉 <a class="reference external" href="https://mybinder-sre.readthedocs.io">
+  the mybinder.org site-reliability guide</a></dt><dd><p>Has information for the team running <code class="docutils literal notranslate"><span class="pre">mybinder.org</span></code>, including dev-ops best-practices and tips for running the BinderHubs behind <code class="docutils literal notranslate"><span class="pre">mybinder.org</span></code>.</p>
+</dd>
+<dt>👉 <a class="reference external" href="https://jupyterhub-team-compass.readthedocs.io">
+  the JupyterHub team compass docs</a></dt><dd><p>Has team information, practices, and guides for the JupyterHub community. This is also a great resource if you’re looking for ways to get involved!</p>
+</dd>
+</dl>
+</div>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='right-next' id="next-link" href="introduction.html" title="next page">차근차근 도전하기!</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3edd59071b60732de7f5.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-101904940-3', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2021, 양자 컴퓨팅 백서.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
